@@ -35,7 +35,7 @@ public class DriveConstants {
     public static final boolean RUN_USING_ENCODER = true;
 
     public static PIDFCoefficients MOTOR_VELO_PID =
-        new PIDFCoefficients(14, 0, 0.5, 13.4);
+        new PIDFCoefficients(14, 0, 0.3, 12.8);
            // getMotorVelocityF(MAX_RPM / 60 * TICKS_PER_REV));
     //f=voltage compensate kf from dash = 12.5-13.5
     //P and D also from dash tuning
@@ -49,8 +49,8 @@ public class DriveConstants {
      * convenience. Make sure to exclude any gear ratio included in MOTOR_CONFIG from GEAR_RATIO.
      */
     public static double WHEEL_RADIUS = (96.0/2)/25.4; //2; // in
-    public static double GEAR_RATIO = 1; // output (wheel) speed / input (motor) speed
-    public static double TRACK_WIDTH = 15.96; // in - tuned in dash
+    public static double GEAR_RATIO = 1.025; // output (wheel) speed / input (motor) speed
+    public static double TRACK_WIDTH = 16.8; // in - tuned in dash
 
     /*
      * These are the feedforward parameters used to model the drive motor behavior. If you are using
@@ -72,9 +72,9 @@ public class DriveConstants {
      */
     //SBH TODO:  adjust these after initial setup
     public static DriveConstraints BASE_CONSTRAINTS = new DriveConstraints(
-        56, 50, 0.0,
-        Math.toRadians(360), Math.toRadians(360), 0.0
-    );
+        59, 40, 0.0,
+        Math.toRadians(360), Math.toRadians(270), 0.0
+    );  //RR tune  maxVel 59.96
 
 
     public static double encoderTicksToInches(double ticks) {
