@@ -398,6 +398,4 @@ public class SampleMecanumDrive extends MecanumDrive {
     public double getRawExternalHeading() {
         return imu.getAngularOrientation().firstAngle;
     }
-
-    public DriveConstraints getConstraints() { return constraints; }
 }
