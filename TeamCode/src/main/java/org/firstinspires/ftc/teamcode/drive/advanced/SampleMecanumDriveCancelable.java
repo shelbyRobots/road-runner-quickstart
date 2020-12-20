@@ -133,7 +133,7 @@ public class SampleMecanumDriveCancelable extends MecanumDrive {
             module.setBulkCachingMode(LynxModule.BulkCachingMode.AUTO);
         }
 
-        // TODO: adjust the names of the following hardware devices to match your configuration
+        // SBHTODO: adjust the names of the following hardware devices to match your configuration
         imu = hardwareMap.get(BNO055IMU.class, "imu");
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit = BNO055IMU.AngleUnit.RADIANS;
@@ -196,8 +196,7 @@ public class SampleMecanumDriveCancelable extends MecanumDrive {
                 new MotionState(heading, 0, 0, 0),
                 new MotionState(heading + angle, 0, 0, 0),
                 MAX_ANG_VEL,
-                MAX_ANG_ACCEL,
-                0
+                MAX_ANG_ACCEL
         );
 
         turnStart = clock.seconds();
