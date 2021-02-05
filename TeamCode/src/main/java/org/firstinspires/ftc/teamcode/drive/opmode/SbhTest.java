@@ -8,6 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
+import org.firstinspires.ftc.teamcode.drive.advanced.PoseStorage;
 
 /*
  * This is an example of a more complex path to really test the tuning.
@@ -96,10 +97,6 @@ public class SbhTest extends LinearOpMode {
         drive.followTrajectory(t7);
         drive.followTrajectory(t8);
 
-//        drive.followTrajectory(
-//                drive.trajectoryBuilder(t1.end(), true)
-//                        .splineTo(new Vector2d(0, 0), Math.toRadians(180))
-//                        .build()
-//        );
+        PoseStorage.currentPose = drive.getPoseEstimate();
     }
 }
